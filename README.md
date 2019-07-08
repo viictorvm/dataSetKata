@@ -7,7 +7,7 @@ pattern, in order to build scalable code.
 * On one hand we have the repository folder, where we have the responsibility to connect our backend with our DB, 
 in this case Postgresql. If we want to change to a No-SQL DB, we just have to implement those files and our app won’t know it.
 * On the other hand, we have the handlers folder, which receives all of the request from endpoint.
-* In the services folder we have every business rule, in this case, Mastermind rules.
+* In the services folder we have every business rule, in this case, dataSet rules.
 * And in the last instance we have the Models folder, where we have entities which represent different object of our system and it helps to have a clear code.
 
 * For the Models, we use a ORM representation to help us to communicate ourself with the database, and also
