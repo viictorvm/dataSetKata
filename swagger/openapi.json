@@ -1,0 +1,65 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DataSet API overview",
+    "version": "v1",
+    "contact": {
+      "email": "viictorvallecillo@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "description": "Everything about dataset problem",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://gist.github.com/kotik/93bbded94031a04e46f75cbef23b2ec7"
+      }
+    }
+  ],
+  "host": "0.0.0.0/api",
+  "paths": {
+    "/dataset": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "operationId": "QueryToDatabase",
+        "summary": "query to database given filter, sorts and group",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Name to identify the player",
+            "required": true,
+            "schema": {
+              "example": {
+                "filter": {
+                  "country": "spain",
+                  "os": "ios"
+                },
+                "group": [
+                  "channel",
+                  "country"
+                ],
+                "sort": [
+                  "impressions"
+                ]
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK"
+          }
+        }
+      }
+    }
+  }
+}

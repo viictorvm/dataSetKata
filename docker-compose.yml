@@ -11,6 +11,7 @@ services:
     - ./nginx/conf:/etc/nginx/conf.d:ro
     depends_on:
     - back
+    - swagger
 
   back:
     build: .
@@ -20,6 +21,18 @@ services:
     - .:/app
     ports:
     - ${API_PORT}:${API_PORT}
+    networks:
+    - main_network
+
+  swagger:
+    image: swaggerapi/swagger-ui
+    container_name: "swagger"
+    ports:
+    - ${SWAGGER_PORT}:${SWAGGER_PORT}
+    volumes:
+    - ./swagger/openapi.json:/openapi.json
+    environment:
+      SWAGGER_JSON: /openapi.json
     networks:
     - main_network
 
